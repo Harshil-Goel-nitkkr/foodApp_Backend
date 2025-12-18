@@ -42,4 +42,4 @@ async function createProduct(productDetails){
     }
 }
 
-export {createProduct, findById, findByIdAndDelete, getAllProducts};
+export {createProduct, getProductById, getProductByIdAndDelete, getAllProducts};

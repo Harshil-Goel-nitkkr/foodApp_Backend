@@ -1,6 +1,5 @@
 import mongoose from "mongoose"
-
-// password is saved without encrypting
+import bcrypt from 'bcrypt'
 
 const userSchema = new mongoose.schema({
     firstName : {
@@ -52,6 +51,11 @@ const userSchema = new mongoose.schema({
 },{
     timestamps: true,
 });
+
+userSchema.pre('save',function(){
+    const hashedPassword = bcrypt.hash(this.password,10);
+    this.password = hashedPassword;
+})
 
 const user = mongoose.model("User",userSchema);
 

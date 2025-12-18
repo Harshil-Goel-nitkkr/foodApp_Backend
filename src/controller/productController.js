@@ -1,6 +1,12 @@
 
-async function createProduct(req,res){
-    console.log("creatingproduct");
+
+async function addProduct(req,res){
+    try{
+        
+    }
+    catch(error){
+
+    }
 }
 
 async function getProductByProductId(req,res){
@@ -15,4 +21,4 @@ async function deleteProduct(req,resp){
     console.log("deleting product wiht given id");
 }
 
-export {createProduct,getProductsByUserId,getProductByProductId,deleteProduct};
+export {addProduct,getProductsByUserId,getProductByProductId,deleteProduct};
