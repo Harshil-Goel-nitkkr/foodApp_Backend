@@ -6,6 +6,7 @@ import productRouter from './routes/productRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
 import cartRouter from './routes/cartRoutes.js';
 import authRouter from './routes/authRoutes.js';
+import cookieParser from 'cookie-parser'
 const app = express();
 
 app.listen(port,async() => {
@@ -16,6 +17,7 @@ app.listen(port,async() => {
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({extended:true}));
+app.use(cookieParser());
 
 app.use('/users',userRouter);
 app.use('/products',productRouter);
