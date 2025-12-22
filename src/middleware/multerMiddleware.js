@@ -1,6 +1,15 @@
+import multer from 'multer'
+import path from 'path'
 
-// implement multer middleware
+const storage = multer.diskStorage({
+    destination: (req, file, next) => {
+        next(null, 'uploads/');
+    },
+    filename: (req, file, next) => {
+        next(null, file.originalname);
+    }
+});
 
-const uploader = "uploader";
+const uploader =  multer({ storage });;
 
 export default uploader;
